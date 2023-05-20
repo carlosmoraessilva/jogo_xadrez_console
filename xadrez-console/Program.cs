@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using tabuleiro;
 using xadrez;
 
@@ -12,7 +8,9 @@ namespace xadrez_console
     {
         static void Main(string[] args)
         {
-            try {
+
+            try
+            {
                 PartidaDeXadrez partida = new PartidaDeXadrez();
 
                 while (!partida.terminada)
@@ -36,7 +34,7 @@ namespace xadrez_console
                         Console.WriteLine();
                         Console.Write("Destino: ");
                         Posicao destino = Tela.lerPosicaoXadrez().toPosicao();
-                        partida.validaPosicaoDeDestino(origem, destino);
+                        partida.validarPosicaoDeDestino(origem, destino);
 
                         partida.realizaJogada(origem, destino);
                     }
@@ -53,9 +51,7 @@ namespace xadrez_console
                 Console.WriteLine(e.Message);
             }
 
-
-
-            Console.ReadKey();
+            Console.ReadLine();
         }
     }
 }
